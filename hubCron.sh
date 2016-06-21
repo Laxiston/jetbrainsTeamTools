@@ -29,11 +29,11 @@ echo -n "UpSource domain url: "
 read upSourceDomain
 echo -n "UpSource port: "
 read upSourcePort
-
-echo -n "TeamCity domain url: "
-read teamCityDomain
-echo -n "TeamCity port: "
-read teamCityPort
+#
+#echo -n "TeamCity domain url: "
+#read teamCityDomain
+#echo -n "TeamCity port: "
+#read teamCityPort
 
 echo -n "Cron E-mail: "
 read cronEmail
@@ -48,14 +48,14 @@ printParams() {
 	echo "YouTrack port: $youTrackPort"
 	echo "UpSource domain url: $upSourceDomain"
 	echo "UpSource port: $upSourcePort"
-	echo "TeamCity domain url: $teamCityDomain"
-	echo "TeamCity port: $teamCityPort"
+#	echo "TeamCity domain url: $teamCityDomain"
+#	echo "TeamCity port: $teamCityPort"
 	echo "Cron email: $cronEmail"
 	echo
 	echo "*****************************************"
 }
 
-if [ "$hubDomain" == "" ] || [ "$hubPort" == "" ] || [ "$youTrackDomain" == "" ] || [ "$youTrackPort" == "" ] || [ "$upSourceDomain" == "" ] || [ "$upSourcePort" == "" ] || [ "$teamCityDomain" == "" ] || [ "$teamCityPort" == "" ] || [ "$cronEmail" == "" ]; then
+if [ "$hubDomain" == "" ] || [ "$hubPort" == "" ] || [ "$youTrackDomain" == "" ] || [ "$youTrackPort" == "" ] || [ "$upSourceDomain" == "" ] || [ "$upSourcePort" == "" ] || [ "$cronEmail" == "" ]; then
   echo "You have mistake into parameters!"
   exit 1
 fi
