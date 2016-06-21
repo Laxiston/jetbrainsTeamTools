@@ -100,7 +100,9 @@ tar -xzvf arch.zip
 
 cd /usr/jetbrains/upsource
 unzip arch.zip
-mv upsource-*/ ../upsource/
+mv upsource-*/** ../upsource/
 chmod +x -R ../upsource/
 cd ~
+
+echo "All products are downloaded and extracted in /usr/jetbrains/"
 
