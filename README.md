@@ -14,5 +14,6 @@ Running sequence: (Using is standard, clone, than run scripts in following seque
 2. fetchJetBrainsProducts.sh
 3. buildInitD.sh
 4. hubCron.sh
+5. installNginx.sh
 
 Then you have running apps on your host with specified ports and domains, so that you can connect it to proxy or other ...

@@ -62,8 +62,5 @@ echo "Building Hub initialization script is completed."
 echo
 buildInitD upsource
 echo "Building UpSource initialization script is completed."
-#echo
-#buildInitD teamcity
-#echo "Building TeamCity initialization script is completed."
 
 echo "BUILDING SUCCESSFULLY COMPLETED."

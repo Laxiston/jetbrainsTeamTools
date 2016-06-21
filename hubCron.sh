@@ -26,11 +26,6 @@ echo -n "UpSource domain url: "
 read upSourceDomain
 echo -n "UpSource port: "
 read upSourcePort
-#
-#echo -n "TeamCity domain url: "
-#read teamCityDomain
-#echo -n "TeamCity port: "
-#read teamCityPort
 
 echo -n "Cron E-mail: "
 read cronEmail
@@ -44,8 +39,6 @@ printParams() {
 	echo "YouTrack port: $youTrackPort"
 	echo "UpSource domain url: $upSourceDomain"
 	echo "UpSource port: $upSourcePort"
-#	echo "TeamCity domain url: $teamCityDomain"
-#	echo "TeamCity port: $teamCityPort"
 	echo "Cron email: $cronEmail"
 	echo
 	echo "*****************************************"
@@ -74,7 +67,7 @@ status=404
 while [ \$status -eq 404 ]; do
   echo "wait HUB ..."
   sleep 60
-  status=\`curl -s -o /dev/null -w "%{http_code}" http://localhost:${hubPort}/hub\`
+  status=\`curl -s -o /dev/null -w "%{http_code}" http://localhost:${hubPort}/hub/\`
   echo "HUB status \$status"
 done
 

@@ -54,20 +54,20 @@ fi
 
 printParams
 
-#echo -n "Do you continue? [Y|n]"
-#read type
-#
-#if [ "$type" == "n" ]; then
-#  exit 0
-#fi
-#
-#echo "Installing Nginx."
-#
-#wget http://nginx.org/keys/nginx_signing.key
-#apt-key add nginx_signing.key
-#echo 'deb http://nginx.org/packages/debian/ jessie nginx' >> /etc/apt/sources.list
-#echo 'deb-src http://nginx.org/packages/debian/ jessie nginx' >> /etc/apt/sources.list
-#apt-get update && apt-get install nginx
+echo -n "Do you continue? [Y|n]"
+read type
+
+if [ "$type" == "n" ]; then
+  exit 0
+fi
+
+echo "Installing Nginx."
+
+wget http://nginx.org/keys/nginx_signing.key
+apt-key add nginx_signing.key
+echo 'deb http://nginx.org/packages/debian/ jessie nginx' >> /etc/apt/sources.list
+echo 'deb-src http://nginx.org/packages/debian/ jessie nginx' >> /etc/apt/sources.list
+apt-get update && apt-get install nginx
 
 echo
 echo "Configuring nginx"
