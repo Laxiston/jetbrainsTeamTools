@@ -100,7 +100,7 @@ tar -xzvf arch.zip
 
 cd /usr/jetbrains/upsource
 unzip arch.zip
-mv Upsource/* ../upsource/
+mv upsource-*/ ../upsource/
 chmod +x -R ../upsource/
 cd ~
 
