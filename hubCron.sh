@@ -12,9 +12,6 @@ fi
 echo "*********************************************************************"
 echo "In order to continue installing need set a few properties for proxy:"
 
-#echo -n "Base domain url: "
-#read baseDomain
-
 echo -n "Hub domain url: "
 read hubDomain
 echo -n "Hub port: "
@@ -41,7 +38,6 @@ read cronEmail
 printParams() {
 	echo "*****************************************"
 	echo
-#	echo "Base domain url: $baseDomain"
 	echo "Hub domain url: $hubDomain"
 	echo "Hub port: $hubPort"
 	echo "YouTrack domain url: $youTrackDomain"
