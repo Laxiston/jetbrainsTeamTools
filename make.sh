@@ -128,7 +128,7 @@ if [ "$code" != "jessie" ]; then
   
   mkdir -p /opt/jdk
   
-  tar -zxf java_version -C /opt/jdk
+  tar -zxf ${java_version} -C /opt/jdk
   
   update-alternatives --install /usr/bin/java java /opt/jdk/jdk1.8.0_60/bin/java 100
   update-alternatives --install /usr/bin/javac javac /opt/jdk/jdk1.8.0_60/bin/javac 100
