@@ -12,8 +12,8 @@ fi
 echo "*********************************************************************"
 echo "In order to continue installing need set a few properties for proxy:"
 
-echo -n "Base domain url: "
-read baseDomain
+#echo -n "Base domain url: "
+#read baseDomain
 
 echo -n "Hub domain url: "
 read hubDomain
@@ -41,7 +41,7 @@ read cronEmail
 printParams() {
 	echo "*****************************************"
 	echo
-	echo "Base domain url: $baseDomain"
+#	echo "Base domain url: $baseDomain"
 	echo "Hub domain url: $hubDomain"
 	echo "Hub port: $hubPort"
 	echo "YouTrack domain url: $youTrackDomain"
@@ -55,7 +55,7 @@ printParams() {
 	echo "*****************************************"
 }
 
-if [ "$baseDomain" == "" ] || [ "$hubDomain" == "" ] || [ "$hubPort" == "" ] || [ "$youTrackDomain" == "" ] || [ "$youTrackPort" == "" ] || [ "$upSourceDomain" == "" ] || [ "$upSourcePort" == "" ] || [ "$teamCityDomain" == "" ] || [ "$teamCityPort" == "" ] || [ "$cronEmail" == "" ]; then
+if [ "$hubDomain" == "" ] || [ "$hubPort" == "" ] || [ "$youTrackDomain" == "" ] || [ "$youTrackPort" == "" ] || [ "$upSourceDomain" == "" ] || [ "$upSourcePort" == "" ] || [ "$teamCityDomain" == "" ] || [ "$teamCityPort" == "" ] || [ "$cronEmail" == "" ]; then
   echo "You have mistake into parameters!"
   exit 1
 fi
