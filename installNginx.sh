@@ -61,7 +61,7 @@ if [ "$type" == "n" ]; then
   exit 0
 fi
 
-code=`lsb_release -a | grep Codename | sed 's/[[:space:]]//g' | cut -f2 -d:`
+code=jessie #`lsb_release -a | grep Codename | sed 's/[[:space:]]//g' | cut -f2 -d:`
 
 echo
 echo "Debian codename:"
