@@ -73,10 +73,10 @@ echo "Configuring nginx"
 
 apt-get install -t ${code}-backports nginx -y
 
-cat >./default<<EOF
+cat >./nginx<<EOF
                     # Server globals
 user                    www-data;
-worker_processes        2;
+worker_processes        4;
 error_log               /var/log/nginx/error.log;
 pid                     /var/run/nginx.pid;
 
@@ -294,6 +294,7 @@ server {
 }
 EOF
 
-cp -f default /etc/nginx/conf.d/proxy.conf
+#cp -f nginx /etc/nginx/nginx.conf
+#cp -f default /etc/nginx/conf.d/proxy.conf
 
 service nginx restart
