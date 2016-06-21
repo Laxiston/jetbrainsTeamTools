@@ -84,22 +84,20 @@ wget http://download.jetbrains.com/upsource/upsource-3.0.4364.zip -O /usr/jetbra
 
 wget http://download.jetbrains.com/teamcity/TeamCity-9.1.7.tar.gz -O /usr/jetbrains/teamcity/arch.tar.gz
 
-pushd /usr/jetbrains/hub
+cd /usr/jetbrains/hub
 unzip arch.zip
-popd
 
-pushd /usr/jetbrains/youtrack
+cd /usr/jetbrains/youtrack
 unzip arch.zip
-popd
 
-pushd /usr/jetbrains/teamcity
+
+cd /usr/jetbrains/teamcity
 tar -xzvf arch.zip
-popd
 
-pushd /usr/jetbrains/upsource
+
+cd /usr/jetbrains/upsource
 unzip arch.zip
 mv Upsource/* ../upsource/
 chmod +x -R ../upsource/
-popd
-popd
+cd ~
 
