@@ -13,8 +13,8 @@ buildInitD() {
 #! /bin/sh
 ### BEGIN INIT INFO
 # Provides:          $1
-# Required-Start:    ${rq}\$local_fs \$remote_fs \$network \$syslog \$named
-# Required-Stop:     ${rq}\$local_fs \$remote_fs \$network \$syslog \$named
+# Required-Start:    $rq\$local_fs \$remote_fs \$network \$syslog \$named
+# Required-Stop:     $rq\$local_fs \$remote_fs \$network \$syslog \$named
 # Default-Start:     2 3 4 5
 # Default-Stop:      S 0 1 6
 # Short-Description: initscript for $1
