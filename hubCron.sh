@@ -38,7 +38,7 @@ read teamCityPort
 echo -n "Cron E-mail: "
 read cronEmail
 
-print_params() {
+printParams() {
 	echo "*****************************************"
 	echo
 	echo "Base domain url: $baseDomain"
@@ -60,7 +60,7 @@ if [ "$baseDomain" == "" ] || [ "$hubDomain" == "" ] || [ "$hubPort" == "" ] || 
   exit 1
 fi
 
-print_params
+printParams
 
 echo -n "Do you continue? [Y|n]"
 read type
