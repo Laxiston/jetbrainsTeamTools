@@ -24,6 +24,8 @@ wget http://download.jetbrains.com/teamcity/TeamCity-9.1.7.tar.gz -O /usr/jetbra
 
 cd /usr/jetbrains/hub
 unzip arch.zip
+mv hub-ring-bundle-2.0.244/** ../hub/
+chmod +x -R ../hub/
 
 cd /usr/jetbrains/youtrack
 unzip arch.zip
