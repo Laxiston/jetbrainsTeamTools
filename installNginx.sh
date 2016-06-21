@@ -1,58 +1,58 @@
 #!/bin/bash
 
-type="y"
-echo "Y - Run installation."
-echo -n "Do you want to continue? [Y|n]: "
-read type
+#type="y"
+#echo "Y - Run installation."
+#echo -n "Do you want to continue? [Y|n]: "
+#read type
+#
+#if [ "$type" == "n" ]; then
+#  exit 0
+#fi
+#
+#echo "*********************************************************************"
+#echo "In order to continue installing need set a few properties for proxy:"
+#
+#echo -n "Main domain url: "
+#read mainDomain
+#echo -n "Hub domain url: "
+#read hubDomain
+#echo -n "Hub port: "
+#read hubPort
+#
+#echo -n "YouTrack domain url: "
+#read youTrackDomain
+#echo -n "YouTrack port: "
+#read youTrackPort
+#
+#echo -n "UpSource domain url: "
+#read upSourceDomain
+#echo -n "UpSource port: "
+#read upSourcePort
+#
+#echo -n "Cron E-mail: "
+#read cronEmail
+#
+#printParams() {
+#	echo "*****************************************"
+#	echo
+#	echo "Main domain url: $mainDomain"
+#	echo "Hub domain url: $hubDomain"
+#	echo "Hub port: $hubPort"
+#	echo "YouTrack domain url: $youTrackDomain"
+#	echo "YouTrack port: $youTrackPort"
+#	echo "UpSource domain url: $upSourceDomain"
+#	echo "UpSource port: $upSourcePort"
+#	echo "Cron email: $cronEmail"
+#	echo
+#	echo "*****************************************"
+#}
+#
+#if [ "$mainDomain" == "" ] || [ "$hubDomain" == "" ] || [ "$hubPort" == "" ] || [ "$youTrackDomain" == "" ] || [ "$youTrackPort" == "" ] || [ "$upSourceDomain" == "" ] || [ "$upSourcePort" == "" ] || [ "$cronEmail" == "" ]; then
+#  echo "You have mistake into parameters!"
+#  exit 1
+#fi
 
-if [ "$type" == "n" ]; then
-  exit 0
-fi
-
-echo "*********************************************************************"
-echo "In order to continue installing need set a few properties for proxy:"
-
-echo -n "Main domain url: "
-read mainDomain
-echo -n "Hub domain url: "
-read hubDomain
-echo -n "Hub port: "
-read hubPort
-
-echo -n "YouTrack domain url: "
-read youTrackDomain
-echo -n "YouTrack port: "
-read youTrackPort
-
-echo -n "UpSource domain url: "
-read upSourceDomain
-echo -n "UpSource port: "
-read upSourcePort
-
-echo -n "Cron E-mail: "
-read cronEmail
-
-printParams() {
-	echo "*****************************************"
-	echo
-	echo "Main domain url: $mainDomain"
-	echo "Hub domain url: $hubDomain"
-	echo "Hub port: $hubPort"
-	echo "YouTrack domain url: $youTrackDomain"
-	echo "YouTrack port: $youTrackPort"
-	echo "UpSource domain url: $upSourceDomain"
-	echo "UpSource port: $upSourcePort"
-	echo "Cron email: $cronEmail"
-	echo
-	echo "*****************************************"
-}
-
-if [ "$mainDomain" == "" ] || [ "$hubDomain" == "" ] || [ "$hubPort" == "" ] || [ "$youTrackDomain" == "" ] || [ "$youTrackPort" == "" ] || [ "$upSourceDomain" == "" ] || [ "$upSourcePort" == "" ] || [ "$cronEmail" == "" ]; then
-  echo "You have mistake into parameters!"
-  exit 1
-fi
-
-printParams
+#printParams
 
 echo -n "Do you continue? [Y|n]"
 read type
@@ -61,17 +61,16 @@ if [ "$type" == "n" ]; then
   exit 0
 fi
 
-code=jessie #`lsb_release -a | grep Codename | sed 's/[[:space:]]//g' | cut -f2 -d:`
+echo "Installing Nginx."
 
-echo
-echo "Debian codename:"
-echo "$code"
-echo
+wget http://nginx.org/keys/nginx_signing.key
+apt-key add nginx_signing.key
+echo 'deb http://nginx.org/packages/debian/ jessie nginx' >> /etc/apt/sources.list
+echo 'deb-src http://nginx.org/packages/debian/ jessie nginx' >> /etc/apt/sources.list
+apt-get update && apt-get install nginx
 
 echo
 echo "Configuring nginx"
-
-apt-get install -t ${code}-backports nginx -y
 
 cat >./nginx<<EOF
                     # Server globals
