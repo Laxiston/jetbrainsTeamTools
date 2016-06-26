@@ -1,5 +1,5 @@
 # JetBrains team tools, installation scripts.
-Coming soon :)
+Coming soon :) (alpha)
 
 Software list:
 
